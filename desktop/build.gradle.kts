@@ -1,3 +1,4 @@
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -5,6 +6,9 @@ plugins {
     alias(libs.plugins.compose.multiplatform)
     alias(libs.plugins.compose.compiler) apply false
 }
+
+group = libs.versions.desktop.group.get()
+version = libs.versions.desktop.version.get()
 
 kotlin {
     jvm("desktop") {
