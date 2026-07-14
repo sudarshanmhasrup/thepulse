@@ -18,4 +18,15 @@ kotlin {
     }
 }
 
+compose.desktop {
+    application {
+        mainClass = libs.versions.desktop.mainClass.get()
+        nativeDistributions {
+            targetFormats = setOf(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            packageName = libs.versions.desktop.distributionPackageName.get()
+            packageVersion = libs.versions.desktop.distributionPackageVersion.get()
+        }
+    }
+}
+
 layout.buildDirectory.set(file("$rootDir/.build/desktop"))
