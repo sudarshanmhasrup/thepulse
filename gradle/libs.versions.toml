@@ -3,6 +3,11 @@
 kotlin = "2.4.10"
 composeMultiplatform = "1.11.1"
 
+# desktop module's configuration information
+desktop-group = "org.pulse.app"
+desktop-version = "26.0.0"
+desktop-mainClass = "org.pulse.app.AppKt"
+
 [libraries]
 
 [bundles]
