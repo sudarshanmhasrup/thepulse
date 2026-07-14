@@ -25,3 +25,8 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+val individualModules = setOf("desktop")
+individualModules.forEach { module ->
+    include(":$module")
+}
