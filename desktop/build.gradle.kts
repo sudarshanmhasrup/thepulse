@@ -16,6 +16,13 @@ kotlin {
             jvmTarget = JvmTarget.JVM_11
         }
     }
+
+    sourceSets {
+        val desktopMain = getByName("desktopMain")
+        desktopMain.dependencies {
+            implementation(compose.desktop.currentOs)
+        }
+    }
 }
 
 compose.desktop {
