@@ -18,7 +18,7 @@ kotlin {
     }
 
     sourceSets {
-        val desktopMain = getByName("desktopMain")
+        val desktopMain = named("desktopMain")
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
         }
@@ -28,6 +28,7 @@ kotlin {
 compose.desktop {
     application {
         mainClass = libs.versions.desktop.mainClass.get()
+
         nativeDistributions {
             targetFormats = setOf(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = libs.versions.desktop.distributionPackageName.get()
